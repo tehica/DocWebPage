@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MySQL Tutorial Web</title>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html">
+    <meta name="author" content="Programeri">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style2.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+
+        </header>
+
+        <main class="main">
+            <h2><span class="title1">MySQL REPLACE</span></h2>
+
+            <p><b>Summary:</b> in this tutorial, you will learn how to use 
+                the MySQL REPLACE statement to insert or update data in 
+                database tables.</p>
+
+            <p><span class="introduction-title">Introduction to MySQL REPLACE statement</span></p>
+            <p>The MySQL <code>REPLACE</code> statement is 
+                an extension to the 
+                <a href="https://www.sqltutorial.org/">SQL Standard.</a> 
+                The MySQL REPLACE statement works as follows:</p>
+
+            <p>Step 1. <a href="https://www.mysqltutorial.org/mysql-insert-statement.aspx">
+                Insert a new row into the table</a>, 
+                if a duplicate key error occurs.</p>
+            <p>Step 2. If the insertion fails due to a duplicate-key error occurs:</p>
+
+            <ul>
+                <li> <a href="https://www.mysqltutorial.org/mysql-delete-statement.aspx"
+                    >Delete</a> 
+                    the conflicting row that causes the duplicate key error from the table.</li>
+                <li>Insert the new row into the table again.</li>
+            </ul>
+
+            <p>
+                To determine whether the new row that already exists in the table, MySQL uses 
+                <a href="#"><code>PRIMARY KEY</code></a>
+                or <a href="#"><code>UNIQUE KEY</code></a> index. 
+                If the table does not have one of these indexes, the <code>REPLACE</code> 
+                works like an <code>INSERT</code> statement.
+            </p>
+
+            <p>
+                To use the <code>REPLACE</code> statement, 
+                you need to have at least both 
+                <code>INSERT</code> and <code>DELETE</code> privileges for the table.
+            </p>
+
+            <p class="para-alert">
+                Notice that MySQL has the 
+                <a href="#"><code>REPLACE</code> string function</a> 
+                which is not the <code>REPLACE</code> statement covered in this tutorial.
+            </p>
+        </main>
+
+        <aside class="aside">
+            <span class="search-box">
+                <input type="text" placeholder="Search...">
+            </span>
+            <div>
+                <h4 id="heading-1">MY SQL QUICK START</h4>
+                <ul>
+                    <li><a href="#">What Is MySQL?</a></li>
+                    <li><a href="#">Install MySQL Database Server</a></li>
+                    <li><a href="#">Connect to MySQL Server</a></li>
+                    <li><a href="#">Download MySQL Sample Database</a></li>
+                    <li><a href="#">Load Sample Database</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 id="heading-2">MYSQL DATA MANIPULATION</h4>
+                <ul>
+                    <li><a href="#">SELECT</a></li>
+                    <li><a href="#">ORDER BY</a></li>
+                    <li><a href="#">WHERE</a></li>
+                    <li><a href="#">SELECT DISTINCT</a></li>
+                    <li><a href="#">AND</a></li>
+                    <li><a href="#">OR</a></li>
+                    <li><a href="#">IN</a></li>
+                    <li><a href="#">BETWEEN</a></li>
+                    <li><a href="#">LIKE</a></li>
+                    <li><a href="#">LIMIT</a></li>
+                    <li><a href="#">IS NULL</a></li>
+                    <li><a href="#">Table & Column Aliases</a></li>
+                    <li><a href="#">Joins</a></li>
+                    <li><a href="#">INNER JOIN</a></li>
+                    <li><a href="#">LEFT JOIN</a></li>
+                    <li><a href="#">RIGHT JOIN</a></li>
+                    <li><a href="#">Self Join</a></li>
+                    <li><a href="#">CROSS JOIN</a></li>
+                    <li><a href="#">GROUP BY</a></li>
+                    <li><a href="#">HAVING</a></li>
+                    <li><a href="#">ROLLUP</a></li>
+                    <li><a href="#">Subquery</a></li>
+                    <li><a href="#">Derived Tables</a></li>
+                    <li><a href="#">EXISTS</a></li>
+                    <li><a href="#">UNION</a></li>
+                    <li><a href="#">MINUS</a></li>
+                    <li><a href="#">INTERSECT</a></li>
+                    <li><a href="#">INSERT</a></li>
+                    <li><a href="#">Insert Multiple Rows</a></li>
+                    <li><a href="#">Insert On Duplicate Key Update</a></li>
+                    <li><a href="#">INSERT IGNORE</a></li>
+                    <li><a href="#">UPDATE</a></li>
+                    <li><a href="#">UPDATE JOIN</a></li>
+                    <li><a href="#">DELETE</a></li>
+                    <li><a href="#">DELETE JOIN</a></li>
+                    <li><a href="#">ON DELETE CASCADE</a></li>
+                    <li><a href="#">REPLACE</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 id="heading-3">MANAGING DATABASES</h4>
+                <ul>
+                    <li><a href="#">Select a Database</a></li>
+                    <li><a href="#">Create Databases</a></li>
+                    <li><a href="#">Drop Databases</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>MANAGING TABLES</h4>
+                <ul>
+                    <li><a href="#">MySQL Storage Engines</a></li>
+                    <li><a href="#">Create Tables</a></li>
+                    <li><a href="#">AUTO_INCREMENT</a></li>
+                    <li><a href="#">Rename Tables</a></li>
+                    <li><a href="#">Alter Tables</a></li>
+                    <li><a href="#">Drop Columns</a></li>
+                    <li><a href="#">Add Columns</a></li>
+                    <li><a href="#">Drop Tables</a></li>
+                    <li><a href="#">Temporary Tables</a></li>
+                    <li><a href="#">Truncate Tables</a></li>
+                    <li><a href="#">Generated Columns</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>MYSQL CONSTRAINTS</h4>
+                <ul>
+                    <li>
+                        <li><a href="#">Primary Key</a></li>
+                        <li><a href="#">Foreign Key</a></li>
+                        <li><a href="#">Disable Foreign Key Checks</a></li>
+                        <li><a href="#">UNIQUE Constraint</a></li>
+                        <li><a href="#">NOT NULL Constraint</a></li>
+                        <li><a href="#">DEFAULT Constraint</a></li>
+                        <li><a href="#">CHECK Constraint</a></li>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+
+        <footer>
+            
+        </footer>
+    </div>
+    
+</body>
+</html>
